@@ -1,0 +1,139 @@
+method,condition,noise,snr_db,seed,accuracy,macro_f1
+B3 majority class,clean,clean,,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),clean,clean,,0,0.6946196985629163,0.5927672270345596
+B1-aug Gaussian Bayes (noise-augmented),clean,clean,,0,0.7146862951279355,0.6060935280109438
+B3 majority class,babble@20dB,babble,20,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@20dB,babble,20,0,0.6236417805818437,0.46799230102224554
+B1-aug Gaussian Bayes (noise-augmented),babble@20dB,babble,20,0,0.6515948124780933,0.5006440796215507
+B3 majority class,babble@10dB,babble,10,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@10dB,babble,10,0,0.5623904661759551,0.3432858537161157
+B1-aug Gaussian Bayes (noise-augmented),babble@10dB,babble,10,0,0.5910445145460919,0.38959751561357564
+B3 majority class,babble@0dB,babble,0,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@0dB,babble,0,0,0.4782684893094988,0.20613436765286605
+B1-aug Gaussian Bayes (noise-augmented),babble@0dB,babble,0,0,0.5004381352961794,0.24462755038697045
+B3 majority class,environmental@20dB,environmental,20,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@20dB,environmental,20,0,0.6246056782334385,0.49633821960679253
+B1-aug Gaussian Bayes (noise-augmented),environmental@20dB,environmental,20,0,0.6569400630914827,0.5319306250825238
+B3 majority class,environmental@10dB,environmental,10,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@10dB,environmental,10,0,0.5420609884332281,0.4025521612188454
+B1-aug Gaussian Bayes (noise-augmented),environmental@10dB,environmental,10,0,0.5805292674377848,0.44297081228554
+B3 majority class,environmental@0dB,environmental,0,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@0dB,environmental,0,0,0.40869260427620047,0.2546790661564427
+B1-aug Gaussian Bayes (noise-augmented),environmental@0dB,environmental,0,0,0.4371713985278654,0.2907517004358648
+B3 majority class,white@20dB,white,20,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@20dB,white,20,0,0.555117420259376,0.44766717256078853
+B1-aug Gaussian Bayes (noise-augmented),white@20dB,white,20,0,0.5793024886084823,0.5041943988611268
+B3 majority class,white@10dB,white,10,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@10dB,white,10,0,0.39957939011566773,0.26456117705871635
+B1-aug Gaussian Bayes (noise-augmented),white@10dB,white,10,0,0.397739221871714,0.35456658566234894
+B3 majority class,white@0dB,white,0,0,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@0dB,white,0,0,0.0969155275148966,0.051048362432553
+B1-aug Gaussian Bayes (noise-augmented),white@0dB,white,0,0,0.09437434279705573,0.09671268527316368
+B3 majority class,babble@20dB,babble,20,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@20dB,babble,20,1,0.6182965299684543,0.46459321195081027
+B1-aug Gaussian Bayes (noise-augmented),babble@20dB,babble,20,1,0.6474763406940063,0.49720001206235526
+B3 majority class,babble@10dB,babble,10,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@10dB,babble,10,1,0.5632667367683141,0.35163143070342917
+B1-aug Gaussian Bayes (noise-augmented),babble@10dB,babble,10,1,0.5940238345601122,0.3933787879926649
+B3 majority class,babble@0dB,babble,0,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@0dB,babble,0,1,0.484577637574483,0.20447859327605733
+B1-aug Gaussian Bayes (noise-augmented),babble@0dB,babble,0,1,0.503329828250964,0.24161337758566212
+B3 majority class,environmental@20dB,environmental,20,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@20dB,environmental,20,1,0.6317910970907816,0.5066418469515256
+B1-aug Gaussian Bayes (noise-augmented),environmental@20dB,environmental,20,1,0.6613214160532772,0.5343081249071507
+B3 majority class,environmental@10dB,environmental,10,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@10dB,environmental,10,1,0.5379425166491413,0.4043820401115919
+B1-aug Gaussian Bayes (noise-augmented),environmental@10dB,environmental,10,1,0.5770241850683491,0.44701775907280544
+B3 majority class,environmental@0dB,environmental,0,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@0dB,environmental,0,1,0.4153522607781283,0.2622291086238386
+B1-aug Gaussian Bayes (noise-augmented),environmental@0dB,environmental,0,1,0.44041359971959343,0.29840745716302775
+B3 majority class,white@20dB,white,20,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@20dB,white,20,1,0.5566070802663863,0.4499056663769661
+B1-aug Gaussian Bayes (noise-augmented),white@20dB,white,20,1,0.5777252015422363,0.5032209023197362
+B3 majority class,white@10dB,white,10,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@10dB,white,10,1,0.39695057833859093,0.2613529746272884
+B1-aug Gaussian Bayes (noise-augmented),white@10dB,white,10,1,0.39931650893796006,0.3573664268638774
+B3 majority class,white@0dB,white,0,1,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@0dB,white,0,1,0.1003329828250964,0.05759974324644643
+B1-aug Gaussian Bayes (noise-augmented),white@0dB,white,0,1,0.09647739221871714,0.09895158753765375
+B3 majority class,babble@20dB,babble,20,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@20dB,babble,20,2,0.6173326323168594,0.46187359637649084
+B1-aug Gaussian Bayes (noise-augmented),babble@20dB,babble,20,2,0.650192779530319,0.49735747972069433
+B3 majority class,babble@10dB,babble,10,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@10dB,babble,10,2,0.5650192779530319,0.3564759487975074
+B1-aug Gaussian Bayes (noise-augmented),babble@10dB,babble,10,2,0.5947248510339993,0.3995832604702077
+B3 majority class,babble@0dB,babble,0,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@0dB,babble,0,2,0.4833508587451805,0.20767415142260068
+B1-aug Gaussian Bayes (noise-augmented),babble@0dB,babble,0,2,0.5092008412197687,0.2495606030631258
+B3 majority class,environmental@20dB,environmental,20,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@20dB,environmental,20,2,0.6187346652646337,0.4916656873519279
+B1-aug Gaussian Bayes (noise-augmented),environmental@20dB,environmental,20,2,0.6565019277953031,0.5325097602375528
+B3 majority class,environmental@10dB,environmental,10,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@10dB,environmental,10,2,0.540658955485454,0.40377542730996185
+B1-aug Gaussian Bayes (noise-augmented),environmental@10dB,environmental,10,2,0.5790396074307746,0.44595080309669966
+B3 majority class,environmental@0dB,environmental,0,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@0dB,environmental,0,2,0.4222747984577638,0.2794540604591182
+B1-aug Gaussian Bayes (noise-augmented),environmental@0dB,environmental,0,2,0.44225376796354715,0.30273492359925486
+B3 majority class,white@20dB,white,20,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@20dB,white,20,2,0.5589730108657553,0.45332388471612234
+B1-aug Gaussian Bayes (noise-augmented),white@20dB,white,20,2,0.5777252015422363,0.504227917114901
+B3 majority class,white@10dB,white,10,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@10dB,white,10,2,0.3987907465825447,0.2670593944401397
+B1-aug Gaussian Bayes (noise-augmented),white@10dB,white,10,2,0.4036102348405188,0.36403950491332404
+B3 majority class,white@0dB,white,0,2,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@0dB,white,0,2,0.09822993340343499,0.05806085772902228
+B1-aug Gaussian Bayes (noise-augmented),white@0dB,white,0,2,0.09577637574483,0.09912491769583831
+B3 majority class,babble@20dB,babble,20,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@20dB,babble,20,3,0.6288117770767613,0.4706793176727935
+B1-aug Gaussian Bayes (noise-augmented),babble@20dB,babble,20,3,0.653434980722047,0.5008462992299266
+B3 majority class,babble@10dB,babble,10,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@10dB,babble,10,3,0.5686996144409394,0.3562365268874263
+B1-aug Gaussian Bayes (noise-augmented),babble@10dB,babble,10,3,0.5935856992639327,0.3933598850135724
+B3 majority class,babble@0dB,babble,0,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@0dB,babble,0,3,0.4767788293024886,0.2027202738614389
+B1-aug Gaussian Bayes (noise-augmented),babble@0dB,babble,0,3,0.5052576235541535,0.252820056591135
+B3 majority class,environmental@20dB,environmental,20,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@20dB,environmental,20,3,0.6264458464773922,0.4985383533247661
+B1-aug Gaussian Bayes (noise-augmented),environmental@20dB,environmental,20,3,0.6598317560462671,0.5358900813680284
+B3 majority class,environmental@10dB,environmental,10,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@10dB,environmental,10,3,0.536540483701367,0.40148291426706223
+B1-aug Gaussian Bayes (noise-augmented),environmental@10dB,environmental,10,3,0.5756221521205749,0.44005346234457265
+B3 majority class,environmental@0dB,environmental,0,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@0dB,environmental,0,3,0.41246056782334384,0.2639981870902038
+B1-aug Gaussian Bayes (noise-augmented),environmental@0dB,environmental,0,3,0.4388363126533473,0.2955240546289228
+B3 majority class,white@20dB,white,20,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@20dB,white,20,3,0.560900806168945,0.454054870202252
+B1-aug Gaussian Bayes (noise-augmented),white@20dB,white,20,3,0.577111812127585,0.5025230310857924
+B3 majority class,white@10dB,white,10,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@10dB,white,10,3,0.39914125481948826,0.2693567515176859
+B1-aug Gaussian Bayes (noise-augmented),white@10dB,white,10,3,0.39914125481948826,0.3546494417373191
+B3 majority class,white@0dB,white,0,3,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@0dB,white,0,3,0.10173501577287067,0.05951615278948342
+B1-aug Gaussian Bayes (noise-augmented),white@0dB,white,0,3,0.09551349456712233,0.10073909616059036
+B3 majority class,babble@20dB,babble,20,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@20dB,babble,20,4,0.6257448300035051,0.47028295536858417
+B1-aug Gaussian Bayes (noise-augmented),babble@20dB,babble,20,4,0.6504556607080266,0.49748800498367873
+B3 majority class,babble@10dB,babble,10,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@10dB,babble,10,4,0.5657202944269191,0.35821555274340633
+B1-aug Gaussian Bayes (noise-augmented),babble@10dB,babble,10,4,0.5934980722046969,0.39645583734124773
+B3 majority class,babble@0dB,babble,0,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),babble@0dB,babble,0,4,0.48308797756747285,0.20517668308255257
+B1-aug Gaussian Bayes (noise-augmented),babble@0dB,babble,0,4,0.5112162635821942,0.25623021727075596
+B3 majority class,environmental@20dB,environmental,20,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@20dB,environmental,20,4,0.622590255871013,0.4972708833866369
+B1-aug Gaussian Bayes (noise-augmented),environmental@20dB,environmental,20,4,0.6562390466175955,0.5291924589595624
+B3 majority class,environmental@10dB,environmental,10,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@10dB,environmental,10,4,0.5396950578338591,0.40167642894464173
+B1-aug Gaussian Bayes (noise-augmented),environmental@10dB,environmental,10,4,0.5807921486154924,0.44957809523790737
+B3 majority class,environmental@0dB,environmental,0,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),environmental@0dB,environmental,0,4,0.41587802313354366,0.2682453743018684
+B1-aug Gaussian Bayes (noise-augmented),environmental@0dB,environmental,0,4,0.44085173501577285,0.29701658569745354
+B3 majority class,white@20dB,white,20,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@20dB,white,20,4,0.5537153873116019,0.44548851517822663
+B1-aug Gaussian Bayes (noise-augmented),white@20dB,white,20,4,0.576235541535226,0.500954629360389
+B3 majority class,white@10dB,white,10,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@10dB,white,10,4,0.39747634069400634,0.267695752766191
+B1-aug Gaussian Bayes (noise-augmented),white@10dB,white,10,4,0.39835261128636523,0.35555807522091026
+B3 majority class,white@0dB,white,0,4,0.6073431475639678,0.06297588544222137
+B1 Gaussian Bayes (clean-trained),white@0dB,white,0,4,0.09954433929197336,0.0551964363581395
+B1-aug Gaussian Bayes (noise-augmented),white@0dB,white,0,4,0.0947248510339993,0.09757933779121135

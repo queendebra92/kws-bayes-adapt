@@ -1,0 +1,31 @@
+{
+  "n_seg": 4,
+  "pca_dim": 80,
+  "eps": 0.01,
+  "iters": 10,
+  "n_adapt": [
+    100,
+    300,
+    1000,
+    3000
+  ],
+  "n_seeds": 5,
+  "validation_selection_macro_f1": {
+    "fixed (no adaptation)": 0.3411357485184644,
+    "v2 affine kappa=20": 0.39047406763112547,
+    "v1 per-class EM tau=16": 0.19682982356633535,
+    "v1 per-class EM tau=64": 0.22291407159159382,
+    "v1 per-class EM tau=256": 0.21414743610295994,
+    "v1 per-class EM tau=1024": 0.2320674521837127,
+    "v2+EM tau=256": 0.3017776673058711,
+    "v2+EM tau=1024": 0.338546394465586,
+    "v2+EM tau=4096": 0.38082168827519036
+  },
+  "tau1": 1024.0,
+  "tau2": 4096.0,
+  "kappa": 20.0,
+  "total_seconds": 1366.850328207016,
+  "python": "3.14.7",
+  "numpy": "2.5.4",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

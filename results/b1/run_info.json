@@ -1,0 +1,106 @@
+{
+  "data": {
+    "data_seed": 0,
+    "splits": {
+      "train": {
+        "n": 87920,
+        "per_class": {
+          "silence": 3077,
+          "unknown": 54074,
+          "yes": 3228,
+          "no": 3130,
+          "up": 2948,
+          "down": 3134,
+          "left": 3037,
+          "right": 3019,
+          "on": 3086,
+          "off": 2970,
+          "stop": 3111,
+          "go": 3106
+        }
+      },
+      "val": {
+        "n": 10351,
+        "per_class": {
+          "silence": 370,
+          "unknown": 6278,
+          "yes": 397,
+          "no": 406,
+          "up": 350,
+          "down": 377,
+          "left": 352,
+          "right": 363,
+          "on": 363,
+          "off": 373,
+          "stop": 350,
+          "go": 372
+        }
+      },
+      "test": {
+        "n": 11412,
+        "per_class": {
+          "silence": 407,
+          "unknown": 6931,
+          "yes": 419,
+          "no": 405,
+          "up": 425,
+          "down": 406,
+          "left": 412,
+          "right": 396,
+          "on": 396,
+          "off": 402,
+          "stop": 411,
+          "go": 402
+        }
+      }
+    }
+  },
+  "noise_pool_files": {
+    "environmental": {
+      "train": 651,
+      "val": 93,
+      "test": 186
+    },
+    "speech": {
+      "train": 298,
+      "val": 42,
+      "test": 86
+    }
+  },
+  "snrs": [
+    20,
+    10,
+    0
+  ],
+  "n_seeds": 5,
+  "eps_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "n_seg": 4,
+  "pca_dim": 80,
+  "feature_dim_raw": 195,
+  "feature_dim": 80,
+  "eps_clean": {
+    "eps": 0.01,
+    "val_macro_f1": 0.6250650638465304
+  },
+  "eps_aug": {
+    "eps": 0.001,
+    "val_macro_f1": 0.5062422796602138
+  },
+  "majority_class": "unknown",
+  "fit_seconds": {
+    "B1 Gaussian Bayes (clean-trained)": 0.2656595706939697,
+    "B1-aug Gaussian Bayes (noise-augmented)": 0.504202127456665
+  },
+  "total_seconds": 926.4625337123871,
+  "python": "3.14.7",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel"
+}
