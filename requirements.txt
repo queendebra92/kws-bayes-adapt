@@ -1,0 +1,8 @@
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.3
+pandas>=2.0
+tqdm>=4.66
+torch>=2.2   # TC-ResNet8 baseline (CPU is enough: ~14 s/epoch on a 2-core machine)
+pytest>=8.0
+librosa>=0.10   # only used by one unit test (filterbank cross-check)
