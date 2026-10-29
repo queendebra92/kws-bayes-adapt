@@ -23,16 +23,17 @@ Data (not included, download separately):
 
 ## Reproduce the baseline table (one command)
 
-`--eps 0.01` freezes the clean-trained B1 regulariser (chosen on validation before any test result was seen); without it the script re-selects eps from the grid on validation, which picks 0.001 and changes B1 by about 0.001-0.003 macro-F1. B1-aug always tunes its own eps on validation.
-
 ```
-python run_baselines.py --sc-root D:\data\speech_commands_v0.02 --musan-root D:\data\musan --out results --eps 0.01
+python reproduce_baselines.py --sc-root D:\data\speech_commands_v0.02 --musan-root D:\data\musan
 ```
 
-Outputs in `results/`: `per_run.csv` (every method x condition x seed),
-`table2_by_snr.csv`, `table2_by_condition.csv`, `table2_macro_f1.tex` (the table in the
-paper), `run_info.json` (counts, tuned values, versions, timings, hardware).
-The first run decodes all audio into `cache/` (about 3.4 GB int16); later runs reuse it.
+This runs B3 and B1/B1-aug (`run_baselines.py`, ridge frozen at `--eps 0.01`), TC-ResNet8 clean-trained (B2) and
+noise-augmented (B2-aug) (`run_tcresnet.py`), and merges everything with `scripts/make_table2.py`.
+Outputs in `results_final/`: `table2_macro_f1.tex` (Table 2 of the paper), `table2_macro_f1.csv`, `per_run_all.csv`
+(every method x condition x seed) and the per-run folders `gaussian/` and `tcresnet/`.
+Check the pipeline first with `--n-seeds 1 --epochs 2`. A full run takes roughly two hours on a laptop CPU
+(B2 about 5 min per seed, B2-aug about 15 min per seed), plus a one-time audio decode into `cache/` (about 3.4 GB).
+The individual steps are listed below.
 
 ## Reproduce the neural baseline
 
