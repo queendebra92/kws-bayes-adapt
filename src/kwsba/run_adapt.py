@@ -59,7 +59,10 @@ def adapt_rng(seed: int, kind: str, snr: int) -> np.random.Generator:
 
 
 def noisy_val_features(wva, idx, kind, snr, pool, rng, part):
-    sub = wva[np.sort(idx)]
+    # idx is a random draw; keep its (random) order. Sorting it made Zu[:n] the n clips with the lowest
+    # validation index, and the validation clips are stored class by class, so every n < max_n used a
+    # class-biased subset in the Stage 3 run (found in Stage 4).
+    sub = wva[idx]
     return features_of(sub, lambda b: add_noise(b, kind, snr, pool, rng, part))
 
 
@@ -163,7 +166,7 @@ def main(argv=None) -> None:
             ar = adapt_rng(seed, kind, snr if kind != "clean" else 0)
             idx = ar.choice(len(wva), size=max_n, replace=False)
             if kind == "clean":
-                Zu = prep.transform(features_of(wva[np.sort(idx)]))
+                Zu = prep.transform(features_of(wva[idx]))
             else:
                 Zu = prep.transform(noisy_val_features(wva, idx, kind, snr, pool, ar, "test"))
             models = {fixed_name: base}

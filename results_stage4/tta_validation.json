@@ -1,0 +1,26 @@
+{
+  "B2|tent": {
+    "lr": 0.001,
+    "epochs": 1,
+    "val_macro_f1": 0.7633526971596152,
+    "val_macro_f1_no_adaptation": 0.7058312213794014
+  },
+  "B2|adakws": {
+    "lr": 0.0001,
+    "epochs": 1,
+    "val_macro_f1": 0.7630837372648448,
+    "val_macro_f1_no_adaptation": 0.7058312213794014
+  },
+  "B2-aug|tent": {
+    "lr": 0.001,
+    "epochs": 1,
+    "val_macro_f1": 0.8385298727439048,
+    "val_macro_f1_no_adaptation": 0.8650887385652359
+  },
+  "B2-aug|adakws": {
+    "lr": 0.001,
+    "epochs": 1,
+    "val_macro_f1": 0.8388938109330181,
+    "val_macro_f1_no_adaptation": 0.8650887385652359
+  }
+}

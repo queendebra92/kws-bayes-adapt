@@ -23,17 +23,16 @@ Data (not included, download separately):
 
 ## Reproduce the baseline table (one command)
 
+`--eps 0.01` freezes the clean-trained B1 regulariser (chosen on validation before any test result was seen); without it the script re-selects eps from the grid on validation, which picks 0.001 and changes B1 by about 0.001-0.003 macro-F1. B1-aug always tunes its own eps on validation.
+
 ```
-python reproduce_baselines.py --sc-root D:\data\speech_commands_v0.02 --musan-root D:\data\musan
+python run_baselines.py --sc-root D:\data\speech_commands_v0.02 --musan-root D:\data\musan --out results --eps 0.01
 ```
 
-This runs B3 and B1/B1-aug (`run_baselines.py`, ridge frozen at `--eps 0.01`), TC-ResNet8 clean-trained (B2) and
-noise-augmented (B2-aug) (`run_tcresnet.py`), and merges everything with `scripts/make_table2.py`.
-Outputs in `results_final/`: `table2_macro_f1.tex` (Table 2 of the paper), `table2_macro_f1.csv`, `per_run_all.csv`
-(every method x condition x seed) and the per-run folders `gaussian/` and `tcresnet/`.
-Check the pipeline first with `--n-seeds 1 --epochs 2`. A full run takes roughly two hours on a laptop CPU
-(B2 about 5 min per seed, B2-aug about 15 min per seed), plus a one-time audio decode into `cache/` (about 3.4 GB).
-The individual steps are listed below.
+Outputs in `results/`: `per_run.csv` (every method x condition x seed),
+`table2_by_snr.csv`, `table2_by_condition.csv`, `table2_macro_f1.tex` (the table in the
+paper), `run_info.json` (counts, tuned values, versions, timings, hardware).
+The first run decodes all audio into `cache/` (about 3.4 GB int16); later runs reuse it.
 
 ## Reproduce the neural baseline
 
@@ -64,6 +63,53 @@ tau1 / tau2 are chosen on the validation split only (the printout also scores "n
 is a possible outcome). Chow rule: reject when the maximum posterior is below 1 - lambda_r. The fixed-model rows in
 `per_run_adapt.csv` reproduce B1 exactly (same noisy test audio); `reject_curve.csv` gives coverage, accuracy on accepted
 clips and expected risk per lambda_r.
+
+## Stage 4: final experiments, ablations, error analysis (one command each)
+
+```
+python run_stage4.py --musan-root D:\data\musan --cache-dir cache --b2-clean-models results_tcresnet\models --b2-aug-models results_tcresnet_aug\models --out results_stage4
+python scripts\analyze_stage4.py --results results_stage4 --out results_stage4\analysis --boot 10000
+```
+
+`run_stage4.py` reuses the Stage 3 protocol (same noisy test audio, same adaptation draws), so the Stage 3 rows are
+reproduced exactly. It adds per-clip predictions for every method, a shared calibration set (one temperature per model) so
+the Chow rule can be applied to all models, the test-time-adaptation baselines AdaBN / Tent / an AdaKWS-style variant on
+B2 and B2-aug (lr and epochs chosen on validation only, `tta_validation.json`), ablations of v2 (shift only, scale only,
+kappa) and sensitivity to the number of adaptation clips and the unknown fraction of the adaptation set.
+`--no-neural` runs the Gaussian methods only. Finished seeds are skipped on re-run.
+`analyze_stage4.py` builds every table and figure of the paper from `results_stage4/` (clip-level paired bootstrap,
+confusion matrices, per-class F1, risk-coverage curves, sensitivity plots); nothing is typed by hand. The paper uses `--boot 10000` (the smallest attainable Holm-adjusted p is then 0.009 over 90 tests).
+`scripts/make_paper_stage4.py --results results_stage4 --analysis results_stage4\analysis --out paper\figures` writes the paper's table fragments and figures;
+`scripts/error_decomp_stage4.py --results results_stage4 --out paper\figures` writes the 0 dB error-decomposition table (Table 3).
+
+### Stage 4 extra: sensitivity to the PCA dimension d and the training-set size n (Gaussian models, a few minutes)
+
+```
+python run_sensitivity_dn.py --musan-root D:\data\musan --cache-dir cache --out results_stage4_dn --n-seeds 3
+```
+
+Same test audio and adaptation draws as `run_stage4.py`, so the settings d = 80 and n = 100 % reproduce the Stage 4 rows
+of B1 and v2 exactly. `scripts/make_paper_stage4.py --dn results_stage4_dn/sens_dn_per_run.csv ...` adds them to Figure 3.
+
+### Stage 4 extra: reject rule versus the number of adaptation clips m (RQ2, Gaussian models, a few minutes)
+
+```
+python run_reject_m.py --musan-root D:\data\musan --cache-dir cache --run-info results_stage4\run_info_stage4.json --out results_stage4_rejm --n-seeds 5 --check results_stage4\sensitivity_per_run.csv
+python scripts\rejm_stage4.py --csv results_stage4_rejm\reject_m_per_run.csv --out paper\figures
+```
+
+Same test audio and nested adaptation sets as the m sweep of `run_stage4.py`; `--check` verifies that the macro-F1 column
+reproduces `sensitivity_per_run.csv` exactly. Coverage, expected risk (lambda_r = 0.2, B1's temperature) and the accuracy of
+the 30 % most confident clips are reported for m = 0 (B1), 10, 30, 100, 300, 1000, 3000.
+
+## Known issue found in Stage 4 (Stage 3 adapted rows)
+
+Stage 3 `run_adapt.py` drew `max(n_adapt)` = 3000 adaptation clips, **sorted** the indices and then used the first `n`.
+The validation clips are stored class by class, so every `n < 3000` used a class-biased subset (the lowest-index
+clips). B1, B1-aug, B2, B2-aug and B3 are unaffected and are reproduced exactly by `run_stage4.py`. The adapted rows
+(v2, v2+EM) and the Stage 3 curve against `n` changed slightly: at m = 1000 the mean macro-F1 of v2 differs from the
+Stage 3 table by 0.006 over all conditions (largest 0.038, babble at 10 dB). `run_adapt.py` now keeps the random order,
+and `run_stage4.py` draws the m clips directly; the Stage 4 numbers are the ones to cite.
 
 ## Tests
 
