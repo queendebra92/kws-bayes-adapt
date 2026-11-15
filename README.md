@@ -150,3 +150,6 @@ end-to-end smoke run. Numbers from synthetic data must never be reported.
 All code in `src/kwsba` is original to this project (NumPy/SciPy/scikit-learn; no code copied from
 other repositories). `librosa` is used only inside one unit test as an independent check of the
 mel filterbank.
+
+
+`pipeline.pdf` and `taxonomy.pdf` are hand-drawn diagrams (TikZ), not generated from results; all other figures and tables come from the scripts above.
